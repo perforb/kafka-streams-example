@@ -5,8 +5,8 @@ services:
     ports:
       - "2181:2181"
     volumes:
-      - ./.zookeeper-data:/data
-      - ./.zookeeper-datalog:/datalog
+      - ../logs/.zookeeper-data:/data
+      - ../logs/.zookeeper-datalog:/datalog
   kafka:
     image: wurstmeister/kafka:latest
     ports:
@@ -22,7 +22,7 @@ services:
     depends_on:
       - zookeeper
     volumes:
-      - ./.kafka-log:/kafka-log
+      - ../logs/.kafka-log:/kafka-log
   kafka-manager:
     image: sheepkiller/kafka-manager:latest
     ports:
@@ -33,4 +33,3 @@ services:
       ZK_HOSTS: zookeeper:2181
       APPLICATION_SECRET: letmein
       KM_ARGS: -Djava.net.preferIPv4Stack=true
-
