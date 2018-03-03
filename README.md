@@ -2,7 +2,11 @@
 
 ## Prerequisites
 
-TODO
+To follow along, you will need:
+
+- Java 8 or later
+- Vagrant
+- VirtualBox
 
 ## How to setup
 
