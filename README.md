@@ -10,4 +10,6 @@ To follow along, you will need:
 
 ## How to setup
 
-TODO
+```
+vagrant up
+```
