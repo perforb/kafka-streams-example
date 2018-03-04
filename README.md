@@ -8,7 +8,7 @@ To follow along, you will need:
 - Vagrant
 - VirtualBox
 
-## How to setup
+## Launch VM and Kafka
 
 ```
 vagrant up
