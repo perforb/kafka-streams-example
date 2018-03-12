@@ -4,9 +4,9 @@ services:
     image: zookeeper:latest
     ports:
       - "2181:2181"
-    volumes:
-      - ../logs/.zookeeper-data:/data
-      - ../logs/.zookeeper-datalog:/datalog
+#    volumes:
+#      - ../logs/.zookeeper-data:/data
+#      - ../logs/.zookeeper-datalog:/datalog
   kafka:
     image: wurstmeister/kafka:latest
     ports:
@@ -21,15 +21,15 @@ services:
       KAFKA_HEAP_OPTS: '-Xms256m -Xmx256m'
     depends_on:
       - zookeeper
-    volumes:
-      - ../logs/.kafka-log:/kafka-log
-  kafka-manager:
-    image: sheepkiller/kafka-manager:latest
-    ports:
-      - "9000:9000"
-    depends_on:
-      - kafka
-    environment:
-      ZK_HOSTS: zookeeper:2181
-      APPLICATION_SECRET: letmein
-      KM_ARGS: -Djava.net.preferIPv4Stack=true
+#    volumes:
+#      - ../logs/.kafka-log:/kafka-log
+#  kafka-manager:
+#    image: sheepkiller/kafka-manager:latest
+#    ports:
+#      - "9000:9000"
+#    depends_on:
+#      - kafka
+#    environment:
+#      ZK_HOSTS: zookeeper:2181
+#      APPLICATION_SECRET: letmein
+#      KM_ARGS: -Djava.net.preferIPv4Stack=true
