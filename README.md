@@ -1,4 +1,4 @@
-# Kafka Streams Examples
+# Kafka Streams Samples
 
 ## Prerequisites
 
