@@ -11,9 +11,9 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/xenial64"
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.hostname = "my.sandbox.local"
-  config.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
+  config.vm.synced_folder ".", "/home/vagrant"
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "mysandbox"
+    vb.name = "sandbox"
     vb.cpus = 1
     vb.memory = 2048
   end
@@ -28,7 +28,6 @@ Vagrant.configure(2) do |config|
     sudo apt-get -y install docker-ce
     sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
-    sudo docker-compose -f /home/vagrant/provisioning/docker-compose.yml up -d
+    sudo docker-compose -f /home/vagrant/docker-compose.yml -p sandbox up -d
   SHELL
 end
-
