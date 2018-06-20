@@ -8,7 +8,13 @@ To follow along, you will need:
 - Vagrant
 - VirtualBox
 
-## Launch VM and Kafka
+## Launching services via Docker
+
+```
+docker-compose -p sandbox up -d
+```
+
+## Launching services by Vagrant
 
 ```
 vagrant up
