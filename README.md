@@ -4,11 +4,12 @@
 
 To follow along, you will need:
 
-- Java 8 or later
-- Vagrant
-- VirtualBox
+* Java 8 or later
+* One of the following:
+    - Docker for (Windows|Mac)
+    - Vagrant and VirtualBox
 
-## Launching services via Docker
+## Launching services by Docker
 
 ```
 docker-compose -p sandbox up -d
